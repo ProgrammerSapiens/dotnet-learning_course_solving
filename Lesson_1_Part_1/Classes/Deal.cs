@@ -1,4 +1,4 @@
-﻿namespace Lesson_1_Part_1
+﻿namespace Lesson_1_Part_1.Classes
 {
     /// <summary>
     /// Represets a Deal with a sum, id, and Date 
