@@ -4,7 +4,7 @@ namespace Lesson_1_Part_2
 {
     internal class Program
     {
-        static private readonly string API_KEY = "2b368ffa7bac7224db94e26166783c65491a4c54";
+        static private readonly string API_KEY = "Enter your API key";
 
         static async Task Main(string[] args)
         {
