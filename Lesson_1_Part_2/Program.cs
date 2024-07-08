@@ -1,12 +1,10 @@
 ﻿using Dadata;
-using Dadata.Model;
-using System.IO;
 
 namespace Lesson_1_Part_2
 {
     internal class Program
     {
-        static private readonly string API_KEY = "Enter your token";
+        static private readonly string API_KEY = "2b368ffa7bac7224db94e26166783c65491a4c54";
 
         static async Task Main(string[] args)
         {
@@ -45,7 +43,7 @@ namespace Lesson_1_Part_2
                 {
                     foreach (var party in result.suggestions)
                     {
-                        Console.WriteLine($"Company: {party.value}");
+                        Console.WriteLine($"Company: {party.value}, address: {party.data.address.value} ");
                     }
                 }
             }
