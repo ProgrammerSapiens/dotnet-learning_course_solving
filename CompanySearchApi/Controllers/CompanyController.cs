@@ -7,7 +7,7 @@ namespace CompanySearchApi.Controllers
     [ApiController]
     public class CompanyController : ControllerBase
     {
-        private readonly string API_KEY = "2b368ffa7bac7224db94e26166783c65491a4c54";
+        private readonly string API_KEY = "Enter your API key";
         private readonly SuggestClientAsync _api;
 
         public CompanyController()
