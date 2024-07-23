@@ -1,5 +1,7 @@
-﻿using Dadata;
+﻿using CompanySearchApi.Hubs;
+using Dadata;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 
 namespace CompanySearchApi.Controllers
 {
@@ -7,16 +9,14 @@ namespace CompanySearchApi.Controllers
     [ApiController]
     public class CompanyController : ControllerBase
     {
-<<<<<<< HEAD
-        private readonly string API_KEY = "Use your Api_key";
-=======
-        private readonly string API_KEY = "Enter your API key";
->>>>>>> origin/main
+        private readonly string API_KEY = "2b368ffa7bac7224db94e26166783c65491a4c54";
         private readonly SuggestClientAsync _api;
+        private readonly IHubContext<CompanyHub> _hubContext;
 
-        public CompanyController()
+        public CompanyController(IHubContext<CompanyHub> hubContext)
         {
             _api = new SuggestClientAsync(API_KEY);
+            _hubContext = hubContext;
         }
 
         [HttpGet("{inn}")]
@@ -34,6 +34,9 @@ namespace CompanySearchApi.Controllers
                 {
                     return NotFound("Conpany does not exist.");
                 }
+
+                var companyName = result.suggestions[0].value;
+                await _hubContext.Clients.All.SendAsync("ReceiveCompanyName", companyName);
 
                 return Ok(result.suggestions);
             }

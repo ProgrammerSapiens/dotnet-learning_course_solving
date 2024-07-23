@@ -1,3 +1,4 @@
+using CompanySearchApi.Hubs;
 
 namespace CompanySearchApi
 {
@@ -6,6 +7,9 @@ namespace CompanySearchApi
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            builder.Services.AddRazorPages();
+            builder.Services.AddSignalR();
 
             // Add services to the container.
             builder.Services.AddCors(options =>
@@ -33,11 +37,17 @@ namespace CompanySearchApi
 
             app.UseHttpsRedirection();
 
-            app.UseAuthorization();
+            app.UseRouting();
+
+            app.UseStaticFiles();
 
             app.UseCors("AllowAll");
 
+            app.UseAuthorization();
+
             app.MapControllers();
+
+            app.MapHub<CompanyHub>("/companyHub");
 
             app.Run();
         }
