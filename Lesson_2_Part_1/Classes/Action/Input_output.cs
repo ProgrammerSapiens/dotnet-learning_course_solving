@@ -2,8 +2,14 @@
 
 namespace Lesson_2_Part_1.Classes.Action
 {
-    static internal class Input_output
+    public class Input_output
     {
+        public event Action<string> onMessageReceived;
+
+        public void ReceiveMessage(string message)
+        {
+            onMessageReceived?.Invoke(message);
+        }
         static internal void ShowOneTank(List<Factories> factories, List<Units> units, List<Tanks> tanks)
         {
             Console.WriteLine("Enter the name of the tank or 'q' to quit: ");
