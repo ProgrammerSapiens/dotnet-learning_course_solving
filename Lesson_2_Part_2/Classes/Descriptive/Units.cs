@@ -1,11 +1,11 @@
 ﻿using Lesson_2_Part_2.Interfaces;
 
-namespace Lesson_2_Part_1.Classes.Descriptive
+namespace Lesson_2_Part_2.Classes.Descriptive
 {
     /// <summary>
     /// Represents a unit with an Id, name, description, and factoryID
     /// </summary>
-    internal class Units : IHaveName
+    public class Units : IHaveName
     {
         /// <summary>
         /// Gets or sets the Id of the unit

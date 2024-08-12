@@ -1,11 +1,11 @@
 ﻿using Lesson_2_Part_2.Interfaces;
 
-namespace Lesson_2_Part_1.Classes.Descriptive
+namespace Lesson_2_Part_2.Classes.Descriptive
 {
     /// <summary>
     /// Represents a factory with an Id, name, and description
     /// </summary>
-    internal class Factories : IHaveName
+    public class Factories : IHaveName
     {
         /// <summary>
         /// Gets or sets the Id of the factory

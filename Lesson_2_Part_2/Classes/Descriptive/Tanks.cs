@@ -1,11 +1,11 @@
 ﻿using Lesson_2_Part_2.Interfaces;
 
-namespace Lesson_2_Part_1.Classes.Descriptive
+namespace Lesson_2_Part_2.Classes.Descriptive
 {
     /// <summary>
     /// Represents a tank with an Id, name, description, volume, maxVolume, and UnitId
     /// </summary>
-    internal class Tanks : IHaveName
+    public class Tanks : IHaveName
     {
         /// <summary>
         /// Gets or sets the Id of the tank
