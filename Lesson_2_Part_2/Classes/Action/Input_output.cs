@@ -30,6 +30,7 @@ namespace Lesson_2_Part_2.Classes.Action
                 else
                 {
                     Console.WriteLine($"Tank with name '{enter}' not found.");
+                    throw new InvalidOperationException($"Tank with name '{enter} was not found.");
                 }
             }
         }
